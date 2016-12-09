@@ -1,7 +1,10 @@
-<?php
-require_once("header.php");
-require_once("util.php");
-?>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>dentaku</title>
+</head>
+<body>
 
 <form action ="dentaku.php" method="post">
 	<input type="number" name="first">
@@ -62,5 +65,9 @@ if(isset($_POST["first"]) && isset($_POST["kigou"]) && isset($_POST["second"])){
 		
 	echo "<hr>", $first, $kigou, $second, "＝", $result;
 };
-require_once("footer.php");
 ?>
+
+
+</body>
+</html>
+
