@@ -24,10 +24,8 @@
 $errors=[];
 
 if(isset($_POST["first"]) && isset($_POST["kigou"]) && isset($_POST["second"])){
-	if(empty($_POST["first"]) || empty($_POST["second"])){
+	if(!is_numeric($_POST["first"]) || !is_numeric($_POST["second"])){
 		$errors[]="数値を二つ入力してください。";
-	}else if(!is_numeric($_POST["first"]) || !is_numeric($_POST["second"])){
-		$errors[]="値は数値を入力してください。";
 	};
 	
 	$kigouList=["＋", "－", "×", "÷"];
@@ -35,6 +33,10 @@ if(isset($_POST["first"]) && isset($_POST["kigou"]) && isset($_POST["second"])){
 	if(!in_array($_POST["kigou"], $kigouList)){
 		$errors[]="記号の値が正しくありません。";
 	};
+
+	if(($_POST["kigou"]==="÷") && ($_POST["second"]==="0")){
+	    $errors[]="0では割れません。";
+    }
 	
 	if(count($errors)>0){
 		echo "<hr>";
@@ -65,6 +67,7 @@ if(isset($_POST["first"]) && isset($_POST["kigou"]) && isset($_POST["second"])){
 		
 	echo "<hr>", $first, $kigou, $second, "＝", $result;
 };
+
 ?>
 
 
