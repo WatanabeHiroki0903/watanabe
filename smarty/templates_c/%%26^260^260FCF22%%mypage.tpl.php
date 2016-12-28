@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.30, created on 2016-12-17 10:09:21
+<?php /* Smarty version 2.6.30, created on 2016-12-27 06:41:59
          compiled from mypage.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => 'header.tpl', 'smarty_include_vars' => array()));
@@ -6,16 +6,17 @@ $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
 
-<h1>マイページ</h1>
+<h2 class="page-header">マイページ</h2>
 
 <?php if ($this->_tpl_vars['login'] == 'yes'): ?>
-    <?php if ($this->_tpl_vars['edit'] == 'update'): ?>
+        <?php if ($this->_tpl_vars['edit'] == 'update'): ?>
         <p>更新しました。</p>
     <?php endif; ?>
     <?php if ($this->_tpl_vars['edit'] == 'delete'): ?>
         <p>削除しました。</p>
     <?php endif; ?>
-    <?php if ($this->_tpl_vars['post'] == 'yes'): ?>
+
+        <?php if ($this->_tpl_vars['post'] == 'yes'): ?>
         <table>
             <tr>
                 <th>投稿日時</th><th>内容</th><th></th><th></th>
@@ -25,7 +26,7 @@ unset($_smarty_tpl_vars);
 ?>
                 <tr>
                     <form action="mypage.php" method="post">
-                        <input type="hidden" name="post_id" value="<?php echo $this->_tpl_vars['row']['id']; ?>
+                                                <input type="hidden" name="post_id" value="<?php echo $this->_tpl_vars['row']['id']; ?>
 ">
                         <td><?php echo $this->_tpl_vars['row']['date']; ?>
 </td>

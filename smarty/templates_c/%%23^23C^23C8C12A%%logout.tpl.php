@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.30, created on 2016-12-17 10:04:29
+<?php /* Smarty version 2.6.30, created on 2016-12-26 09:31:02
          compiled from logout.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => 'header.tpl', 'smarty_include_vars' => array()));
@@ -6,7 +6,7 @@ $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
 
-<h1>ログアウト</h1>
+<h2 class="page-header">ログアウト</h2>
 
 <?php if ($this->_tpl_vars['login'] == 'yes'): ?>
     <form action="logout.php" method="post">

@@ -1,6 +1,6 @@
 {include file='header.tpl'}
 
-<h1>マイページ</h1>
+<h2 class="page-header">マイページ</h2>
 
 {*ログインしているかどうかで分岐*}
 {if $login=='yes'}

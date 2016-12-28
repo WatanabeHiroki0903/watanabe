@@ -3,7 +3,6 @@ require_once('require.php');
 
 
 $errors=array();
-
 //値がポストされている時の処理
 if(isset($_POST['id']) && isset($_POST['password'])) {
     //値が空の時エラーを表示
@@ -23,11 +22,19 @@ if(isset($_POST['id']) && isset($_POST['password'])) {
         $password = $_POST['password'];
 
         //入力された値をデータベースの情報と照合
-        $sql = $pdo->prepare('select * from member where id=:id and password=:password');
-        $sql->bindValue(':id', $id, PDO::PARAM_STR);
-        $sql->bindValue(':password', $password, PDO::PARAM_STR);
-        $sql->execute();
-        $memberList = $sql->fetchAll(PDO::FETCH_ASSOC);
+        try {
+            $pdo->beginTransaction();
+            $sql = $pdo->prepare('select * from member where id=:id and password=:password');
+            $sql->bindValue(':id', $id, PDO::PARAM_STR);
+            $sql->bindValue(':password', $password, PDO::PARAM_STR);
+            $sql->execute();
+            $memberList = $sql->fetchAll(PDO::FETCH_ASSOC);
+            $pdo->commit();
+        }catch(Exception $e){
+            echo 'データベースの取得に失敗しました。';
+            echo $e->getMessage();
+            $pdo->rollBack();
+        };
 
         //情報が間違っていればエラーを表示
         if (count($memberList) === 0) {

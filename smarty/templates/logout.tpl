@@ -1,6 +1,6 @@
 {include file='header.tpl'}
 
-<h1>ログアウト</h1>
+<h2 class="page-header">ログアウト</h2>
 
 {*ログインしているかどうかで分岐*}
 {if $login=='yes'}

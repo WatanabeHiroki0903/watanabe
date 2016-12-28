@@ -1,6 +1,6 @@
 {include file='header.tpl'}
 
-<h1>掲示板</h1>
+<h2 class="page-header">掲示板</h2>
 
 {*ログインしているかどうかで分岐*}
 {if $login=='yes'}
