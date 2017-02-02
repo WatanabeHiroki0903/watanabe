@@ -94,8 +94,7 @@ class LC_Page_FrontParts_Bloc_News extends LC_Page_FrontParts_Bloc_Ex
                 }
                 break;
             default:
-                $this->arrNews = $objNews->getList();
-                $this->arrNews = $objNews->checkDisplayDate($this->arrNews); //追加
+                $this->arrNews = $objNews->getList(0, 0, false, true);
                 $this->newsCount = $objNews->getCount();
                 break;
         }

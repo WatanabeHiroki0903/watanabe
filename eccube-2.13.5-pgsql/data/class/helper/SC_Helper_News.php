@@ -58,13 +58,17 @@ class SC_Helper_News
      * @param  boolean $has_deleted 削除されたニュースも含む場合 true; 初期値 false
      * @return array
      */
-    public function getList($dispNumber = 0, $pageNumber = 0, $has_deleted = false)
+    public function getList($dispNumber = 0, $pageNumber = 0, $has_deleted = false, $term = false)
     {
         $objQuery =& SC_Query_Ex::getSingletonInstance();
         $col = '*, cast(news_date as date) as cast_news_date, cast(news_start_date as date) as cast_news_start_date, cast(news_end_date as date) as cast_news_end_date'; //変更
         $where = '';
+        $now = date('Ymd', time());
+        if($term){
+            $where = 'TO_CHAR(news_start_date, \'YYYYMMDD\') <= \''. $now. '\' AND TO_CHAR(news_end_date, \'YYYYMMDD\') >= \''. $now. '\' AND ';
+        }
         if (!$has_deleted) {
-            $where .= 'del_flg = 0';
+            $where .= ' del_flg = 0';
         }
         $table = 'dtb_news';
         $objQuery->setOrder('rank DESC');
@@ -78,33 +82,6 @@ class SC_Helper_News
         $arrRet = $objQuery->select($col, $table, $where);
 
         return $arrRet;
-    }
-
-    /**
-     * 表示期限に適したニュース一覧の選別.
-     *
-     * @param  array $arrNews  ニュース一覧
-     * @return array
-     */
-    public function checkDisplayDate($arrNews) //追加
-    {
-        $checkNewsList = array();
-        $displayDate = date("Ymd", time());
-
-        foreach($arrNews as $array) {
-            $start_date = $array['cast_news_start_date'];
-            $start_date = explode("-", $start_date);
-            $start_date = implode("", $start_date);
-
-            $end_date = $array['cast_news_end_date'];
-            $end_date = explode("-", $end_date);
-            $end_date = implode("", $end_date);
-
-            if(($displayDate >= $start_date) && ($displayDate <= $end_date)){
-                $checkNewsList[] = $array;
-            }
-        }
-        return $checkNewsList;
     }
 
     /**

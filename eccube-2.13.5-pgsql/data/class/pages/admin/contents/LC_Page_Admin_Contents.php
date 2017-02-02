@@ -172,8 +172,7 @@ class LC_Page_Admin_Contents extends LC_Page_Admin_Ex
         $objErr = new SC_CheckError_Ex($objFormParam->getHashArray());
         $objErr->arrErr = $objFormParam->checkError();
         $objErr->doFunc(array('日付', 'year', 'month', 'day'), array('CHECK_DATE'));
-        $objErr->doFunc(array('お知らせ開始期限', 'news_start_year', 'news_start_month', 'news_start_day'), array('CHECK_DATE')); //追加
-        $objErr->doFunc(array('お知らせ終了期限', 'news_end_year', 'news_end_month', 'news_end_day'), array('CHECK_DATE')); //追加
+        $objErr->doFunc(array('お知らせ開始期限', 'お知らせ終了期限', 'news_start_year', 'news_start_month', 'news_start_day', 'news_end_year', 'news_end_month', 'news_end_day'), array('CHECK_SET_TERM')); //追加
 
         return $objErr->arrErr;
     }

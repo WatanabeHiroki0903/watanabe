@@ -128,3 +128,485 @@ customer_id = 1
 2017/02/01 14:41:25 [/eccube-2.13.5-pgsql/html/index.php] Warning(E_WARNING): implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed on [/vagrant/www/eccube-2.13.5-pgsql/data/class/helper/SC_Helper_News.php(102)] from 192.168.55.1
 2017/02/01 14:41:25 [/eccube-2.13.5-pgsql/html/index.php] Warning(E_WARNING): explode() [<a href='function.explode'>function.explode</a>]: Empty delimiter on [/vagrant/www/eccube-2.13.5-pgsql/data/class/helper/SC_Helper_News.php(101)] from 192.168.55.1
 2017/02/01 14:41:25 [/eccube-2.13.5-pgsql/html/index.php] Warning(E_WARNING): implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed on [/vagrant/www/eccube-2.13.5-pgsql/data/class/helper/SC_Helper_News.php(102)] from 192.168.55.1
+2017/02/02 18:00:55 [/eccube-2.13.5-pgsql/html/index.php] Fatal error(E_USER_ERROR): DB処理でエラーが発生しました。
+SQL: [SELECT *, cast(news_date as date) as cast_news_date, cast(news_start_date as date) as cast_news_start_date, cast(news_end_date as date) as cast_news_end_date FROM dtb_news WHERE news_start_date <= 2017-02-02 00:00:00 <= news_end_datedel_flg = 0  ORDER BY rank DESC ]
+MDB2 Error: syntax error
+prepare: [Error message: Unable to create prepared statement handle]
+[Last executed query: DEALLOCATE PREPARE mdb2_statement_pgsql_1122d5762f8d8d9bda6fe79c6bd8ae8367dfdd7c46]
+[Native message: ERROR:  syntax error at or near "00"
+行 1: ...FROM dtb_news WHERE news_start_date ]
+ on [/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1095)] from 192.168.55.1
+customer_id = 
+/vagrant/www/eccube-2.13.5-pgsql/html/index.php(28): LC_Page_Index_Ex->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class_extends/page_extends/LC_Page_Index_Ex.php(54): LC_Page_Index->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/LC_Page_Index.php(54): LC_Page->sendResponse
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/LC_Page.php(155): SC_Display->prepare
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Display.php(80): SC_View->getResponse
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_View.php(105): Smarty->fetch
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1264): include
+/vagrant/www/eccube-2.13.5-pgsql/data/Smarty/templates_c/default/%%F1^F15^F158E3F4%%site_frame.tpl.php(98): Smarty->_smarty_include
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1870): include
+/vagrant/www/eccube-2.13.5-pgsql/data/Smarty/templates_c/default/%%58^587^5876E692%%site_main.tpl.php(45): smarty_core_smarty_include_php
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/internals/core.smarty_include_php.php(40): Smarty->_include
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1924): include
+/vagrant/www/eccube-2.13.5-pgsql/html/frontparts/bloc/news.php(29): LC_Page_FrontParts_Bloc_News_Ex->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class_extends/page_extends/frontparts/bloc/LC_Page_FrontParts_Bloc_News_Ex.php(54): LC_Page_FrontParts_Bloc_News->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/frontparts/bloc/LC_Page_FrontParts_Bloc_News.php(52): LC_Page_FrontParts_Bloc_News->action
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/frontparts/bloc/LC_Page_FrontParts_Bloc_News.php(97): SC_Helper_News->getList
+/vagrant/www/eccube-2.13.5-pgsql/data/class/helper/SC_Helper_News.php(82): SC_Query->select
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(176): SC_Query->getAll
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(304): SC_Query->prepare
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1024): SC_Query->error
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1095): trigger_error
+2017/02/02 18:05:55 [/eccube-2.13.5-pgsql/html/index.php] Fatal error(E_USER_ERROR): DB処理でエラーが発生しました。
+SQL: [SELECT *, cast(news_date as date) as cast_news_date, cast(news_start_date as date) as cast_news_start_date, cast(news_end_date as date) as cast_news_end_date FROM dtb_news WHERE news_start_date <= 2017-02-02 00:00:00 <= news_end_date del_flg = 0  ORDER BY rank DESC ]
+MDB2 Error: syntax error
+prepare: [Error message: Unable to create prepared statement handle]
+[Last executed query: DEALLOCATE PREPARE mdb2_statement_pgsql_119c683a9fc69db71e6e1bead3cfc82e9b707013be]
+[Native message: ERROR:  syntax error at or near "00"
+行 1: ...FROM dtb_news WHERE news_start_date ]
+ on [/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1095)] from 192.168.55.1
+customer_id = 
+/vagrant/www/eccube-2.13.5-pgsql/html/index.php(28): LC_Page_Index_Ex->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class_extends/page_extends/LC_Page_Index_Ex.php(54): LC_Page_Index->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/LC_Page_Index.php(54): LC_Page->sendResponse
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/LC_Page.php(155): SC_Display->prepare
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Display.php(80): SC_View->getResponse
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_View.php(105): Smarty->fetch
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1264): include
+/vagrant/www/eccube-2.13.5-pgsql/data/Smarty/templates_c/default/%%F1^F15^F158E3F4%%site_frame.tpl.php(98): Smarty->_smarty_include
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1870): include
+/vagrant/www/eccube-2.13.5-pgsql/data/Smarty/templates_c/default/%%58^587^5876E692%%site_main.tpl.php(45): smarty_core_smarty_include_php
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/internals/core.smarty_include_php.php(40): Smarty->_include
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1924): include
+/vagrant/www/eccube-2.13.5-pgsql/html/frontparts/bloc/news.php(29): LC_Page_FrontParts_Bloc_News_Ex->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class_extends/page_extends/frontparts/bloc/LC_Page_FrontParts_Bloc_News_Ex.php(54): LC_Page_FrontParts_Bloc_News->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/frontparts/bloc/LC_Page_FrontParts_Bloc_News.php(52): LC_Page_FrontParts_Bloc_News->action
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/frontparts/bloc/LC_Page_FrontParts_Bloc_News.php(97): SC_Helper_News->getList
+/vagrant/www/eccube-2.13.5-pgsql/data/class/helper/SC_Helper_News.php(82): SC_Query->select
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(176): SC_Query->getAll
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(304): SC_Query->prepare
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1024): SC_Query->error
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1095): trigger_error
+2017/02/02 18:09:38 [/eccube-2.13.5-pgsql/html/index.php] Fatal error(E_USER_ERROR): DB処理でエラーが発生しました。
+SQL: [SELECT *, cast(news_date as date) as cast_news_date, cast(news_start_date as date) as cast_news_start_date, cast(news_end_date as date) as cast_news_end_date FROM dtb_news WHERE news_start_date <= 2017-02-02 00:00:00AND2017-02-02 00:00:00 <= news_end_date del_flg = 0  ORDER BY rank DESC ]
+MDB2 Error: syntax error
+prepare: [Error message: Unable to create prepared statement handle]
+[Last executed query: DEALLOCATE PREPARE mdb2_statement_pgsql_11b89b3f2ff40004c7a20cad3c581435313a36cddd]
+[Native message: ERROR:  syntax error at or near "00"
+行 1: ...FROM dtb_news WHERE news_start_date ]
+ on [/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1095)] from 192.168.55.1
+customer_id = 
+/vagrant/www/eccube-2.13.5-pgsql/html/index.php(28): LC_Page_Index_Ex->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class_extends/page_extends/LC_Page_Index_Ex.php(54): LC_Page_Index->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/LC_Page_Index.php(54): LC_Page->sendResponse
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/LC_Page.php(155): SC_Display->prepare
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Display.php(80): SC_View->getResponse
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_View.php(105): Smarty->fetch
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1264): include
+/vagrant/www/eccube-2.13.5-pgsql/data/Smarty/templates_c/default/%%F1^F15^F158E3F4%%site_frame.tpl.php(98): Smarty->_smarty_include
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1870): include
+/vagrant/www/eccube-2.13.5-pgsql/data/Smarty/templates_c/default/%%58^587^5876E692%%site_main.tpl.php(45): smarty_core_smarty_include_php
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/internals/core.smarty_include_php.php(40): Smarty->_include
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1924): include
+/vagrant/www/eccube-2.13.5-pgsql/html/frontparts/bloc/news.php(29): LC_Page_FrontParts_Bloc_News_Ex->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class_extends/page_extends/frontparts/bloc/LC_Page_FrontParts_Bloc_News_Ex.php(54): LC_Page_FrontParts_Bloc_News->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/frontparts/bloc/LC_Page_FrontParts_Bloc_News.php(52): LC_Page_FrontParts_Bloc_News->action
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/frontparts/bloc/LC_Page_FrontParts_Bloc_News.php(97): SC_Helper_News->getList
+/vagrant/www/eccube-2.13.5-pgsql/data/class/helper/SC_Helper_News.php(82): SC_Query->select
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(176): SC_Query->getAll
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(304): SC_Query->prepare
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1024): SC_Query->error
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1095): trigger_error
+2017/02/02 18:10:32 [/eccube-2.13.5-pgsql/html/index.php] Fatal error(E_USER_ERROR): DB処理でエラーが発生しました。
+SQL: [SELECT *, cast(news_date as date) as cast_news_date, cast(news_start_date as date) as cast_news_start_date, cast(news_end_date as date) as cast_news_end_date FROM dtb_news WHERE news_start_date <= 2017-02-02 00:00:00 AND 2017-02-02 00:00:00 <= news_end_date del_flg = 0  ORDER BY rank DESC ]
+MDB2 Error: syntax error
+prepare: [Error message: Unable to create prepared statement handle]
+[Last executed query: DEALLOCATE PREPARE mdb2_statement_pgsql_11d11ee81d1af29bf7e3bfd80c255305ca413e54d3]
+[Native message: ERROR:  syntax error at or near "00"
+行 1: ...FROM dtb_news WHERE news_start_date ]
+ on [/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1095)] from 192.168.55.1
+customer_id = 
+/vagrant/www/eccube-2.13.5-pgsql/html/index.php(28): LC_Page_Index_Ex->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class_extends/page_extends/LC_Page_Index_Ex.php(54): LC_Page_Index->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/LC_Page_Index.php(54): LC_Page->sendResponse
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/LC_Page.php(155): SC_Display->prepare
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Display.php(80): SC_View->getResponse
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_View.php(105): Smarty->fetch
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1264): include
+/vagrant/www/eccube-2.13.5-pgsql/data/Smarty/templates_c/default/%%F1^F15^F158E3F4%%site_frame.tpl.php(98): Smarty->_smarty_include
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1870): include
+/vagrant/www/eccube-2.13.5-pgsql/data/Smarty/templates_c/default/%%58^587^5876E692%%site_main.tpl.php(45): smarty_core_smarty_include_php
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/internals/core.smarty_include_php.php(40): Smarty->_include
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1924): include
+/vagrant/www/eccube-2.13.5-pgsql/html/frontparts/bloc/news.php(29): LC_Page_FrontParts_Bloc_News_Ex->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class_extends/page_extends/frontparts/bloc/LC_Page_FrontParts_Bloc_News_Ex.php(54): LC_Page_FrontParts_Bloc_News->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/frontparts/bloc/LC_Page_FrontParts_Bloc_News.php(52): LC_Page_FrontParts_Bloc_News->action
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/frontparts/bloc/LC_Page_FrontParts_Bloc_News.php(97): SC_Helper_News->getList
+/vagrant/www/eccube-2.13.5-pgsql/data/class/helper/SC_Helper_News.php(82): SC_Query->select
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(176): SC_Query->getAll
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(304): SC_Query->prepare
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1024): SC_Query->error
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1095): trigger_error
+2017/02/02 18:12:29 [/eccube-2.13.5-pgsql/html/index.php] Fatal error(E_USER_ERROR): DB処理でエラーが発生しました。
+SQL: [SELECT *, cast(news_date as date) as cast_news_date, cast(news_start_date as date) as cast_news_start_date, cast(news_end_date as date) as cast_news_end_date FROM dtb_news WHERE news_start_date <= 2017-02-02 00:00:00 del_flg = 0  ORDER BY rank DESC ]
+MDB2 Error: syntax error
+prepare: [Error message: Unable to create prepared statement handle]
+[Last executed query: DEALLOCATE PREPARE mdb2_statement_pgsql_11ad245d772cae55c624c02f9cea9af8d98c5e8d8a]
+[Native message: ERROR:  syntax error at or near "00"
+行 1: ...FROM dtb_news WHERE news_start_date ]
+ on [/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1095)] from 192.168.55.1
+customer_id = 
+/vagrant/www/eccube-2.13.5-pgsql/html/index.php(28): LC_Page_Index_Ex->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class_extends/page_extends/LC_Page_Index_Ex.php(54): LC_Page_Index->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/LC_Page_Index.php(54): LC_Page->sendResponse
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/LC_Page.php(155): SC_Display->prepare
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Display.php(80): SC_View->getResponse
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_View.php(105): Smarty->fetch
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1264): include
+/vagrant/www/eccube-2.13.5-pgsql/data/Smarty/templates_c/default/%%F1^F15^F158E3F4%%site_frame.tpl.php(98): Smarty->_smarty_include
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1870): include
+/vagrant/www/eccube-2.13.5-pgsql/data/Smarty/templates_c/default/%%58^587^5876E692%%site_main.tpl.php(45): smarty_core_smarty_include_php
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/internals/core.smarty_include_php.php(40): Smarty->_include
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1924): include
+/vagrant/www/eccube-2.13.5-pgsql/html/frontparts/bloc/news.php(29): LC_Page_FrontParts_Bloc_News_Ex->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class_extends/page_extends/frontparts/bloc/LC_Page_FrontParts_Bloc_News_Ex.php(54): LC_Page_FrontParts_Bloc_News->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/frontparts/bloc/LC_Page_FrontParts_Bloc_News.php(52): LC_Page_FrontParts_Bloc_News->action
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/frontparts/bloc/LC_Page_FrontParts_Bloc_News.php(97): SC_Helper_News->getList
+/vagrant/www/eccube-2.13.5-pgsql/data/class/helper/SC_Helper_News.php(82): SC_Query->select
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(176): SC_Query->getAll
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(304): SC_Query->prepare
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1024): SC_Query->error
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1095): trigger_error
+2017/02/02 18:15:05 [/eccube-2.13.5-pgsql/html/index.php] Fatal error(E_USER_ERROR): DB処理でエラーが発生しました。
+SQL: [SELECT *, cast(news_date as date) as cast_news_date, cast(news_start_date as date) as cast_news_start_date, cast(news_end_date as date) as cast_news_end_date FROM dtb_news WHERE news_start_date <= "2017-02-02 00:00:00" del_flg = 0  ORDER BY rank DESC ]
+MDB2 Error: syntax error
+prepare: [Error message: Unable to create prepared statement handle]
+[Last executed query: DEALLOCATE PREPARE mdb2_statement_pgsql_11bd7da02e85088a00026b1a47226b9c1a3d46758e]
+[Native message: ERROR:  syntax error at or near "del_flg"
+行 1: ...ws WHERE news_start_date ]
+ on [/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1095)] from 192.168.55.1
+customer_id = 
+/vagrant/www/eccube-2.13.5-pgsql/html/index.php(28): LC_Page_Index_Ex->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class_extends/page_extends/LC_Page_Index_Ex.php(54): LC_Page_Index->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/LC_Page_Index.php(54): LC_Page->sendResponse
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/LC_Page.php(155): SC_Display->prepare
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Display.php(80): SC_View->getResponse
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_View.php(105): Smarty->fetch
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1264): include
+/vagrant/www/eccube-2.13.5-pgsql/data/Smarty/templates_c/default/%%F1^F15^F158E3F4%%site_frame.tpl.php(98): Smarty->_smarty_include
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1870): include
+/vagrant/www/eccube-2.13.5-pgsql/data/Smarty/templates_c/default/%%58^587^5876E692%%site_main.tpl.php(45): smarty_core_smarty_include_php
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/internals/core.smarty_include_php.php(40): Smarty->_include
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1924): include
+/vagrant/www/eccube-2.13.5-pgsql/html/frontparts/bloc/news.php(29): LC_Page_FrontParts_Bloc_News_Ex->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class_extends/page_extends/frontparts/bloc/LC_Page_FrontParts_Bloc_News_Ex.php(54): LC_Page_FrontParts_Bloc_News->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/frontparts/bloc/LC_Page_FrontParts_Bloc_News.php(52): LC_Page_FrontParts_Bloc_News->action
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/frontparts/bloc/LC_Page_FrontParts_Bloc_News.php(97): SC_Helper_News->getList
+/vagrant/www/eccube-2.13.5-pgsql/data/class/helper/SC_Helper_News.php(82): SC_Query->select
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(176): SC_Query->getAll
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(304): SC_Query->prepare
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1024): SC_Query->error
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1095): trigger_error
+2017/02/02 18:15:49 [/eccube-2.13.5-pgsql/html/index.php] Fatal error(E_USER_ERROR): DB処理でエラーが発生しました。
+SQL: [SELECT *, cast(news_date as date) as cast_news_date, cast(news_start_date as date) as cast_news_start_date, cast(news_end_date as date) as cast_news_end_date FROM dtb_news WHERE news_start_date <= "2017-02-02" del_flg = 0  ORDER BY rank DESC ]
+MDB2 Error: syntax error
+prepare: [Error message: Unable to create prepared statement handle]
+[Last executed query: DEALLOCATE PREPARE mdb2_statement_pgsql_1155451472d4f8823071c02db8fb41fd49eaf7a15f]
+[Native message: ERROR:  syntax error at or near "del_flg"
+行 1: ...OM dtb_news WHERE news_start_date ]
+ on [/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1095)] from 192.168.55.1
+customer_id = 
+/vagrant/www/eccube-2.13.5-pgsql/html/index.php(28): LC_Page_Index_Ex->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class_extends/page_extends/LC_Page_Index_Ex.php(54): LC_Page_Index->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/LC_Page_Index.php(54): LC_Page->sendResponse
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/LC_Page.php(155): SC_Display->prepare
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Display.php(80): SC_View->getResponse
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_View.php(105): Smarty->fetch
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1264): include
+/vagrant/www/eccube-2.13.5-pgsql/data/Smarty/templates_c/default/%%F1^F15^F158E3F4%%site_frame.tpl.php(98): Smarty->_smarty_include
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1870): include
+/vagrant/www/eccube-2.13.5-pgsql/data/Smarty/templates_c/default/%%58^587^5876E692%%site_main.tpl.php(45): smarty_core_smarty_include_php
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/internals/core.smarty_include_php.php(40): Smarty->_include
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1924): include
+/vagrant/www/eccube-2.13.5-pgsql/html/frontparts/bloc/news.php(29): LC_Page_FrontParts_Bloc_News_Ex->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class_extends/page_extends/frontparts/bloc/LC_Page_FrontParts_Bloc_News_Ex.php(54): LC_Page_FrontParts_Bloc_News->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/frontparts/bloc/LC_Page_FrontParts_Bloc_News.php(52): LC_Page_FrontParts_Bloc_News->action
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/frontparts/bloc/LC_Page_FrontParts_Bloc_News.php(97): SC_Helper_News->getList
+/vagrant/www/eccube-2.13.5-pgsql/data/class/helper/SC_Helper_News.php(82): SC_Query->select
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(176): SC_Query->getAll
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(304): SC_Query->prepare
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1024): SC_Query->error
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1095): trigger_error
+2017/02/02 18:22:13 [/eccube-2.13.5-pgsql/html/index.php] Fatal error(E_PARSE): syntax error, unexpected '}' on [/vagrant/www/eccube-2.13.5-pgsql/data/class/helper/SC_Helper_News.php(69)] from 192.168.55.1
+customer_id = 
+2017/02/02 18:23:00 [/eccube-2.13.5-pgsql/html/index.php] Fatal error(E_USER_ERROR): DB処理でエラーが発生しました。
+SQL: [SELECT *, cast(news_date as date) as cast_news_date, cast(news_start_date as date) as cast_news_start_date, cast(news_end_date as date) as cast_news_end_date FROM dtb_news WHERE news_start_date <=CAST(2017-02-02 00:00:00 AS TIMESTAMP)del_flg = 0  ORDER BY rank DESC ]
+MDB2 Error: syntax error
+prepare: [Error message: Unable to create prepared statement handle]
+[Last executed query: DEALLOCATE PREPARE mdb2_statement_pgsql_114c836c147f0cdf01b1bb1bafb836e17b02ebfb9e]
+[Native message: ERROR:  syntax error at or near "00"
+行 1: ... dtb_news WHERE news_start_date ]
+ on [/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1095)] from 192.168.55.1
+customer_id = 
+/vagrant/www/eccube-2.13.5-pgsql/html/index.php(28): LC_Page_Index_Ex->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class_extends/page_extends/LC_Page_Index_Ex.php(54): LC_Page_Index->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/LC_Page_Index.php(54): LC_Page->sendResponse
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/LC_Page.php(155): SC_Display->prepare
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Display.php(80): SC_View->getResponse
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_View.php(105): Smarty->fetch
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1264): include
+/vagrant/www/eccube-2.13.5-pgsql/data/Smarty/templates_c/default/%%F1^F15^F158E3F4%%site_frame.tpl.php(98): Smarty->_smarty_include
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1870): include
+/vagrant/www/eccube-2.13.5-pgsql/data/Smarty/templates_c/default/%%58^587^5876E692%%site_main.tpl.php(45): smarty_core_smarty_include_php
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/internals/core.smarty_include_php.php(40): Smarty->_include
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1924): include
+/vagrant/www/eccube-2.13.5-pgsql/html/frontparts/bloc/news.php(29): LC_Page_FrontParts_Bloc_News_Ex->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class_extends/page_extends/frontparts/bloc/LC_Page_FrontParts_Bloc_News_Ex.php(54): LC_Page_FrontParts_Bloc_News->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/frontparts/bloc/LC_Page_FrontParts_Bloc_News.php(52): LC_Page_FrontParts_Bloc_News->action
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/frontparts/bloc/LC_Page_FrontParts_Bloc_News.php(97): SC_Helper_News->getList
+/vagrant/www/eccube-2.13.5-pgsql/data/class/helper/SC_Helper_News.php(82): SC_Query->select
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(176): SC_Query->getAll
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(304): SC_Query->prepare
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1024): SC_Query->error
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1095): trigger_error
+2017/02/02 18:23:42 [/eccube-2.13.5-pgsql/html/index.php] Fatal error(E_USER_ERROR): DB処理でエラーが発生しました。
+SQL: [SELECT *, cast(news_date as date) as cast_news_date, cast(news_start_date as date) as cast_news_start_date, cast(news_end_date as date) as cast_news_end_date FROM dtb_news WHERE news_start_date <=CAST("2017-02-02 00:00:00" AS TIMESTAMP)del_flg = 0  ORDER BY rank DESC ]
+MDB2 Error: syntax error
+prepare: [Error message: Unable to create prepared statement handle]
+[Last executed query: DEALLOCATE PREPARE mdb2_statement_pgsql_114cd652ab6d81dff087bc8b3222517a38f735bff5]
+[Native message: ERROR:  syntax error at or near "del_flg"
+行 1: ...rt_date ]
+ on [/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1095)] from 192.168.55.1
+customer_id = 
+/vagrant/www/eccube-2.13.5-pgsql/html/index.php(28): LC_Page_Index_Ex->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class_extends/page_extends/LC_Page_Index_Ex.php(54): LC_Page_Index->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/LC_Page_Index.php(54): LC_Page->sendResponse
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/LC_Page.php(155): SC_Display->prepare
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Display.php(80): SC_View->getResponse
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_View.php(105): Smarty->fetch
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1264): include
+/vagrant/www/eccube-2.13.5-pgsql/data/Smarty/templates_c/default/%%F1^F15^F158E3F4%%site_frame.tpl.php(98): Smarty->_smarty_include
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1870): include
+/vagrant/www/eccube-2.13.5-pgsql/data/Smarty/templates_c/default/%%58^587^5876E692%%site_main.tpl.php(45): smarty_core_smarty_include_php
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/internals/core.smarty_include_php.php(40): Smarty->_include
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1924): include
+/vagrant/www/eccube-2.13.5-pgsql/html/frontparts/bloc/news.php(29): LC_Page_FrontParts_Bloc_News_Ex->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class_extends/page_extends/frontparts/bloc/LC_Page_FrontParts_Bloc_News_Ex.php(54): LC_Page_FrontParts_Bloc_News->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/frontparts/bloc/LC_Page_FrontParts_Bloc_News.php(52): LC_Page_FrontParts_Bloc_News->action
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/frontparts/bloc/LC_Page_FrontParts_Bloc_News.php(97): SC_Helper_News->getList
+/vagrant/www/eccube-2.13.5-pgsql/data/class/helper/SC_Helper_News.php(82): SC_Query->select
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(176): SC_Query->getAll
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(304): SC_Query->prepare
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1024): SC_Query->error
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1095): trigger_error
+2017/02/02 18:25:49 [/eccube-2.13.5-pgsql/html/index.php] Fatal error(E_USER_ERROR): DB処理でエラーが発生しました。
+SQL: [SELECT *, cast(news_date as date) as cast_news_date, cast(news_start_date as date) as cast_news_start_date, cast(news_end_date as date) as cast_news_end_date FROM dtb_news WHERE news_start_date <=1486027549del_flg = 0  ORDER BY rank DESC ]
+MDB2 Error: syntax error
+prepare: [Error message: Unable to create prepared statement handle]
+[Last executed query: DEALLOCATE PREPARE mdb2_statement_pgsql_11b03551f7cb252b25c1b77a57282417818659fe1e]
+[Native message: ERROR:  syntax error at or near "del_flg"
+行 1: ...e FROM dtb_news WHERE news_start_date ]
+ on [/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1095)] from 192.168.55.1
+customer_id = 
+/vagrant/www/eccube-2.13.5-pgsql/html/index.php(28): LC_Page_Index_Ex->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class_extends/page_extends/LC_Page_Index_Ex.php(54): LC_Page_Index->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/LC_Page_Index.php(54): LC_Page->sendResponse
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/LC_Page.php(155): SC_Display->prepare
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Display.php(80): SC_View->getResponse
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_View.php(105): Smarty->fetch
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1264): include
+/vagrant/www/eccube-2.13.5-pgsql/data/Smarty/templates_c/default/%%F1^F15^F158E3F4%%site_frame.tpl.php(98): Smarty->_smarty_include
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1870): include
+/vagrant/www/eccube-2.13.5-pgsql/data/Smarty/templates_c/default/%%58^587^5876E692%%site_main.tpl.php(45): smarty_core_smarty_include_php
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/internals/core.smarty_include_php.php(40): Smarty->_include
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1924): include
+/vagrant/www/eccube-2.13.5-pgsql/html/frontparts/bloc/news.php(29): LC_Page_FrontParts_Bloc_News_Ex->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class_extends/page_extends/frontparts/bloc/LC_Page_FrontParts_Bloc_News_Ex.php(54): LC_Page_FrontParts_Bloc_News->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/frontparts/bloc/LC_Page_FrontParts_Bloc_News.php(52): LC_Page_FrontParts_Bloc_News->action
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/frontparts/bloc/LC_Page_FrontParts_Bloc_News.php(97): SC_Helper_News->getList
+/vagrant/www/eccube-2.13.5-pgsql/data/class/helper/SC_Helper_News.php(82): SC_Query->select
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(176): SC_Query->getAll
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(304): SC_Query->prepare
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1024): SC_Query->error
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1095): trigger_error
+2017/02/02 18:26:29 [/eccube-2.13.5-pgsql/html/index.php] Fatal error(E_USER_ERROR): DB処理でエラーが発生しました。
+SQL: [SELECT *, cast(news_date as date) as cast_news_date, cast(news_start_date as date) as cast_news_start_date, cast(news_end_date as date) as cast_news_end_date FROM dtb_news WHERE news_start_date <=1486027589 del_flg = 0  ORDER BY rank DESC ]
+MDB2 Error: syntax error
+prepare: [Error message: Unable to create prepared statement handle]
+[Last executed query: DEALLOCATE PREPARE mdb2_statement_pgsql_11eddec378b50e8b623d3661b959b72e708facfc4e]
+[Native message: ERROR:  syntax error at or near "del_flg"
+行 1: ... FROM dtb_news WHERE news_start_date ]
+ on [/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1095)] from 192.168.55.1
+customer_id = 
+/vagrant/www/eccube-2.13.5-pgsql/html/index.php(28): LC_Page_Index_Ex->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class_extends/page_extends/LC_Page_Index_Ex.php(54): LC_Page_Index->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/LC_Page_Index.php(54): LC_Page->sendResponse
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/LC_Page.php(155): SC_Display->prepare
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Display.php(80): SC_View->getResponse
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_View.php(105): Smarty->fetch
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1264): include
+/vagrant/www/eccube-2.13.5-pgsql/data/Smarty/templates_c/default/%%F1^F15^F158E3F4%%site_frame.tpl.php(98): Smarty->_smarty_include
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1870): include
+/vagrant/www/eccube-2.13.5-pgsql/data/Smarty/templates_c/default/%%58^587^5876E692%%site_main.tpl.php(45): smarty_core_smarty_include_php
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/internals/core.smarty_include_php.php(40): Smarty->_include
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1924): include
+/vagrant/www/eccube-2.13.5-pgsql/html/frontparts/bloc/news.php(29): LC_Page_FrontParts_Bloc_News_Ex->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class_extends/page_extends/frontparts/bloc/LC_Page_FrontParts_Bloc_News_Ex.php(54): LC_Page_FrontParts_Bloc_News->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/frontparts/bloc/LC_Page_FrontParts_Bloc_News.php(52): LC_Page_FrontParts_Bloc_News->action
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/frontparts/bloc/LC_Page_FrontParts_Bloc_News.php(97): SC_Helper_News->getList
+/vagrant/www/eccube-2.13.5-pgsql/data/class/helper/SC_Helper_News.php(82): SC_Query->select
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(176): SC_Query->getAll
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(304): SC_Query->prepare
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1024): SC_Query->error
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1095): trigger_error
+2017/02/02 18:33:57 [/eccube-2.13.5-pgsql/html/index.php] Fatal error(E_USER_ERROR): DB処理でエラーが発生しました。
+SQL: [SELECT *, cast(news_date as date) as cast_news_date, cast(news_start_date as date) as cast_news_start_date, cast(news_end_date as date) as cast_news_end_date FROM dtb_news WHERE news_start_date <=2017-02-02 00:00:00 del_flg = 0  ORDER BY rank DESC ]
+MDB2 Error: syntax error
+prepare: [Error message: Unable to create prepared statement handle]
+[Last executed query: DEALLOCATE PREPARE mdb2_statement_pgsql_11dcc24147722c375e3652e8b6d7f244c85974f5b8]
+[Native message: ERROR:  syntax error at or near "00"
+行 1: ... FROM dtb_news WHERE news_start_date ]
+ on [/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1095)] from 192.168.55.1
+customer_id = 
+/vagrant/www/eccube-2.13.5-pgsql/html/index.php(28): LC_Page_Index_Ex->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class_extends/page_extends/LC_Page_Index_Ex.php(54): LC_Page_Index->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/LC_Page_Index.php(54): LC_Page->sendResponse
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/LC_Page.php(155): SC_Display->prepare
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Display.php(80): SC_View->getResponse
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_View.php(105): Smarty->fetch
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1264): include
+/vagrant/www/eccube-2.13.5-pgsql/data/Smarty/templates_c/default/%%F1^F15^F158E3F4%%site_frame.tpl.php(98): Smarty->_smarty_include
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1870): include
+/vagrant/www/eccube-2.13.5-pgsql/data/Smarty/templates_c/default/%%58^587^5876E692%%site_main.tpl.php(45): smarty_core_smarty_include_php
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/internals/core.smarty_include_php.php(40): Smarty->_include
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1924): include
+/vagrant/www/eccube-2.13.5-pgsql/html/frontparts/bloc/news.php(29): LC_Page_FrontParts_Bloc_News_Ex->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class_extends/page_extends/frontparts/bloc/LC_Page_FrontParts_Bloc_News_Ex.php(54): LC_Page_FrontParts_Bloc_News->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/frontparts/bloc/LC_Page_FrontParts_Bloc_News.php(52): LC_Page_FrontParts_Bloc_News->action
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/frontparts/bloc/LC_Page_FrontParts_Bloc_News.php(97): SC_Helper_News->getList
+/vagrant/www/eccube-2.13.5-pgsql/data/class/helper/SC_Helper_News.php(82): SC_Query->select
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(176): SC_Query->getAll
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(304): SC_Query->prepare
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1024): SC_Query->error
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1095): trigger_error
+2017/02/02 18:35:55 [/eccube-2.13.5-pgsql/html/index.php] Fatal error(E_USER_ERROR): DB処理でエラーが発生しました。
+SQL: [SELECT *, cast(news_date as date) as cast_news_date, cast(news_start_date as date) as cast_news_start_date, cast(news_end_date as date) as cast_news_end_date FROM dtb_news WHERE news_start_date <= "2017-02-02 00:00:00" del_flg = 0  ORDER BY rank DESC ]
+MDB2 Error: syntax error
+prepare: [Error message: Unable to create prepared statement handle]
+[Last executed query: DEALLOCATE PREPARE mdb2_statement_pgsql_1115d85444ffb4f1d1f6c6035e2d18ecd78d01845e]
+[Native message: ERROR:  syntax error at or near "del_flg"
+行 1: ...ws WHERE news_start_date ]
+ on [/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1095)] from 192.168.55.1
+customer_id = 
+/vagrant/www/eccube-2.13.5-pgsql/html/index.php(28): LC_Page_Index_Ex->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class_extends/page_extends/LC_Page_Index_Ex.php(54): LC_Page_Index->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/LC_Page_Index.php(54): LC_Page->sendResponse
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/LC_Page.php(155): SC_Display->prepare
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Display.php(80): SC_View->getResponse
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_View.php(105): Smarty->fetch
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1264): include
+/vagrant/www/eccube-2.13.5-pgsql/data/Smarty/templates_c/default/%%F1^F15^F158E3F4%%site_frame.tpl.php(98): Smarty->_smarty_include
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1870): include
+/vagrant/www/eccube-2.13.5-pgsql/data/Smarty/templates_c/default/%%58^587^5876E692%%site_main.tpl.php(45): smarty_core_smarty_include_php
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/internals/core.smarty_include_php.php(40): Smarty->_include
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1924): include
+/vagrant/www/eccube-2.13.5-pgsql/html/frontparts/bloc/news.php(29): LC_Page_FrontParts_Bloc_News_Ex->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class_extends/page_extends/frontparts/bloc/LC_Page_FrontParts_Bloc_News_Ex.php(54): LC_Page_FrontParts_Bloc_News->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/frontparts/bloc/LC_Page_FrontParts_Bloc_News.php(52): LC_Page_FrontParts_Bloc_News->action
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/frontparts/bloc/LC_Page_FrontParts_Bloc_News.php(97): SC_Helper_News->getList
+/vagrant/www/eccube-2.13.5-pgsql/data/class/helper/SC_Helper_News.php(82): SC_Query->select
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(176): SC_Query->getAll
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(304): SC_Query->prepare
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1024): SC_Query->error
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1095): trigger_error
+2017/02/02 18:42:07 [/eccube-2.13.5-pgsql/html/index.php] Fatal error(E_USER_ERROR): DB処理でエラーが発生しました。
+SQL: [SELECT *, cast(news_date as date) as cast_news_date, cast(news_start_date as date) as cast_news_start_date, cast(news_end_date as date) as cast_news_end_date FROM dtb_news WHERE news_start_date <= "20170202" del_flg = 0  ORDER BY rank DESC ]
+MDB2 Error: syntax error
+prepare: [Error message: Unable to create prepared statement handle]
+[Last executed query: DEALLOCATE PREPARE mdb2_statement_pgsql_11f248d6b8981a571baa1d052f311bc8307a25d0b2]
+[Native message: ERROR:  syntax error at or near "del_flg"
+行 1: ...FROM dtb_news WHERE news_start_date ]
+ on [/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1095)] from 192.168.55.1
+customer_id = 
+/vagrant/www/eccube-2.13.5-pgsql/html/index.php(28): LC_Page_Index_Ex->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class_extends/page_extends/LC_Page_Index_Ex.php(54): LC_Page_Index->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/LC_Page_Index.php(54): LC_Page->sendResponse
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/LC_Page.php(155): SC_Display->prepare
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Display.php(80): SC_View->getResponse
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_View.php(105): Smarty->fetch
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1264): include
+/vagrant/www/eccube-2.13.5-pgsql/data/Smarty/templates_c/default/%%F1^F15^F158E3F4%%site_frame.tpl.php(98): Smarty->_smarty_include
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1870): include
+/vagrant/www/eccube-2.13.5-pgsql/data/Smarty/templates_c/default/%%58^587^5876E692%%site_main.tpl.php(45): smarty_core_smarty_include_php
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/internals/core.smarty_include_php.php(40): Smarty->_include
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1924): include
+/vagrant/www/eccube-2.13.5-pgsql/html/frontparts/bloc/news.php(29): LC_Page_FrontParts_Bloc_News_Ex->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class_extends/page_extends/frontparts/bloc/LC_Page_FrontParts_Bloc_News_Ex.php(54): LC_Page_FrontParts_Bloc_News->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/frontparts/bloc/LC_Page_FrontParts_Bloc_News.php(52): LC_Page_FrontParts_Bloc_News->action
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/frontparts/bloc/LC_Page_FrontParts_Bloc_News.php(97): SC_Helper_News->getList
+/vagrant/www/eccube-2.13.5-pgsql/data/class/helper/SC_Helper_News.php(82): SC_Query->select
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(176): SC_Query->getAll
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(304): SC_Query->prepare
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1024): SC_Query->error
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1095): trigger_error
+2017/02/02 18:44:35 [/eccube-2.13.5-pgsql/html/index.php] Fatal error(E_USER_ERROR): DB処理でエラーが発生しました。
+SQL: [SELECT *, cast(news_date as date) as cast_news_date, cast(news_start_date as date) as cast_news_start_date, cast(news_end_date as date) as cast_news_end_date FROM dtb_news WHERE TO_CHAR(news_start_date, 'YYYYMMDD') <= '{$now}' del_flg = 0  ORDER BY rank DESC ]
+MDB2 Error: syntax error
+prepare: [Error message: Unable to create prepared statement handle]
+[Last executed query: DEALLOCATE PREPARE mdb2_statement_pgsql_113f0cf826abd6a28e7b55b11c38fb327171741bd2]
+[Native message: ERROR:  syntax error at or near "del_flg"
+行 1: ... TO_CHAR(news_start_date, 'YYYYMMDD') ]
+ on [/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1095)] from 192.168.55.1
+customer_id = 
+/vagrant/www/eccube-2.13.5-pgsql/html/index.php(28): LC_Page_Index_Ex->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class_extends/page_extends/LC_Page_Index_Ex.php(54): LC_Page_Index->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/LC_Page_Index.php(54): LC_Page->sendResponse
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/LC_Page.php(155): SC_Display->prepare
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Display.php(80): SC_View->getResponse
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_View.php(105): Smarty->fetch
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1264): include
+/vagrant/www/eccube-2.13.5-pgsql/data/Smarty/templates_c/default/%%F1^F15^F158E3F4%%site_frame.tpl.php(98): Smarty->_smarty_include
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1870): include
+/vagrant/www/eccube-2.13.5-pgsql/data/Smarty/templates_c/default/%%58^587^5876E692%%site_main.tpl.php(45): smarty_core_smarty_include_php
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/internals/core.smarty_include_php.php(40): Smarty->_include
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1924): include
+/vagrant/www/eccube-2.13.5-pgsql/html/frontparts/bloc/news.php(29): LC_Page_FrontParts_Bloc_News_Ex->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class_extends/page_extends/frontparts/bloc/LC_Page_FrontParts_Bloc_News_Ex.php(54): LC_Page_FrontParts_Bloc_News->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/frontparts/bloc/LC_Page_FrontParts_Bloc_News.php(52): LC_Page_FrontParts_Bloc_News->action
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/frontparts/bloc/LC_Page_FrontParts_Bloc_News.php(97): SC_Helper_News->getList
+/vagrant/www/eccube-2.13.5-pgsql/data/class/helper/SC_Helper_News.php(82): SC_Query->select
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(176): SC_Query->getAll
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(304): SC_Query->prepare
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1024): SC_Query->error
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1095): trigger_error
+2017/02/02 18:45:19 [/eccube-2.13.5-pgsql/html/index.php] Fatal error(E_USER_ERROR): DB処理でエラーが発生しました。
+SQL: [SELECT *, cast(news_date as date) as cast_news_date, cast(news_start_date as date) as cast_news_start_date, cast(news_end_date as date) as cast_news_end_date FROM dtb_news WHERE TO_CHAR(news_start_date, 'YYYYMMDD') <= '20170202' del_flg = 0  ORDER BY rank DESC ]
+MDB2 Error: syntax error
+prepare: [Error message: Unable to create prepared statement handle]
+[Last executed query: DEALLOCATE PREPARE mdb2_statement_pgsql_115cbee1790dded2d4e97b48f346a6ccd379477557]
+[Native message: ERROR:  syntax error at or near "del_flg"
+行 1: ...O_CHAR(news_start_date, 'YYYYMMDD') ]
+ on [/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1095)] from 192.168.55.1
+customer_id = 
+/vagrant/www/eccube-2.13.5-pgsql/html/index.php(28): LC_Page_Index_Ex->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class_extends/page_extends/LC_Page_Index_Ex.php(54): LC_Page_Index->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/LC_Page_Index.php(54): LC_Page->sendResponse
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/LC_Page.php(155): SC_Display->prepare
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Display.php(80): SC_View->getResponse
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_View.php(105): Smarty->fetch
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1264): include
+/vagrant/www/eccube-2.13.5-pgsql/data/Smarty/templates_c/default/%%F1^F15^F158E3F4%%site_frame.tpl.php(98): Smarty->_smarty_include
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1870): include
+/vagrant/www/eccube-2.13.5-pgsql/data/Smarty/templates_c/default/%%58^587^5876E692%%site_main.tpl.php(45): smarty_core_smarty_include_php
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/internals/core.smarty_include_php.php(40): Smarty->_include
+/vagrant/www/eccube-2.13.5-pgsql/data/module/Smarty/libs/Smarty.class.php(1924): include
+/vagrant/www/eccube-2.13.5-pgsql/html/frontparts/bloc/news.php(29): LC_Page_FrontParts_Bloc_News_Ex->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class_extends/page_extends/frontparts/bloc/LC_Page_FrontParts_Bloc_News_Ex.php(54): LC_Page_FrontParts_Bloc_News->process
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/frontparts/bloc/LC_Page_FrontParts_Bloc_News.php(52): LC_Page_FrontParts_Bloc_News->action
+/vagrant/www/eccube-2.13.5-pgsql/data/class/pages/frontparts/bloc/LC_Page_FrontParts_Bloc_News.php(97): SC_Helper_News->getList
+/vagrant/www/eccube-2.13.5-pgsql/data/class/helper/SC_Helper_News.php(82): SC_Query->select
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(176): SC_Query->getAll
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(304): SC_Query->prepare
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1024): SC_Query->error
+/vagrant/www/eccube-2.13.5-pgsql/data/class/SC_Query.php(1095): trigger_error
