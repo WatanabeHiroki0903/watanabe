@@ -63,12 +63,13 @@ class SC_Helper_News
         $objQuery =& SC_Query_Ex::getSingletonInstance();
         $col = '*, cast(news_date as date) as cast_news_date, cast(news_start_date as date) as cast_news_start_date, cast(news_end_date as date) as cast_news_end_date'; //変更
         $where = '';
-        $now = date('Ymd', time());
-        if($term){
-            $where = 'TO_CHAR(news_start_date, \'YYYYMMDD\') <= \''. $now. '\' AND TO_CHAR(news_end_date, \'YYYYMMDD\') >= \''. $now. '\' AND ';
-        }
         if (!$has_deleted) {
-            $where .= ' del_flg = 0';
+            $where .= 'del_flg = 0';
+        }
+        if($term){
+            $now = date('Ymd', time());
+            $where .= " AND TO_CHAR(news_start_date, 'YYYYMMDD') <= ? AND TO_CHAR(news_end_date, 'YYYYMMDD') >= ?";
+            $arrWhereVal = array($now, $now);
         }
         $table = 'dtb_news';
         $objQuery->setOrder('rank DESC');
@@ -79,7 +80,11 @@ class SC_Helper_News
                 $objQuery->setLimit($dispNumber);
             }
         }
-        $arrRet = $objQuery->select($col, $table, $where);
+        if(!$term){
+            $arrRet = $objQuery->select($col, $table, $where);
+        }else{
+            $arrRet = $objQuery->select($col, $table, $where, $arrWhereVal);
+        }
 
         return $arrRet;
     }
